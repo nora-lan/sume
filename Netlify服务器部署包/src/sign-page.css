@@ -1,0 +1,163 @@
+:root { font-family: "DM Sans", "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #26352f; background: #f2f4ef; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+html, body, #root { width: 100%; min-width: 0; min-height: 100%; }
+body { margin: 0; min-width: 320px; min-height: 100vh; overflow-x: hidden; background: radial-gradient(ellipse at 14% 0%, #e8eee5 0, transparent 34%), #f2f4ef; }
+button { font: inherit; }
+.app-shell { width: 100%; min-width: 0; max-width: 1336px; margin: 0 auto; padding: 28px 52px 24px; min-height: 100vh; display: flex; flex-direction: column; }
+.topbar { display: flex; align-items: center; gap: 15px; padding-bottom: 25px; border-bottom: 1px solid #dfe5dc; }
+.brand-mark { width: 43px; height: 43px; display: grid; place-items: center; border: 1px solid #d3ded2; border-radius: 14px; background: #e7eee5; color: #47634f; font-size: 19px; font-weight: 700; }
+.heading { display: flex; flex-direction: column; gap: 3px; }
+.eyebrow, .step-label { color: #8b998f; font: 600 10px/1.2 "DM Sans", sans-serif; letter-spacing: .17em; }
+.heading h1 { margin: 0; color: #25372f; font-size: 22px; font-weight: 650; letter-spacing: .03em; }
+.secure-label { margin-left: auto; color: #718177; display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.secure-label span { width: 7px; height: 7px; border-radius: 50%; background: #7d9e81; box-shadow: 0 0 0 4px #e4ece2; }
+.workspace { display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(390px, .97fr); gap: 25px; align-items: start; padding-top: 26px; flex: 1; }
+.contract-card, .signing-card { min-width: 0; width: 100%; border: 1px solid #e3e8e0; border-radius: 18px; background: rgba(255, 255, 255, .88); box-shadow: 0 14px 34px rgba(43, 61, 49, .055); }
+.contract-card { padding: 29px 32px 25px; }
+.contract-preview-scroll { width: 100%; min-width: 0; max-height: min(78vh, 1050px); overflow: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; margin: 20px 0 0; padding: 4px 12px 20px; background: #f3f4f1; border-radius: 10px; }
+.contract-preview { width: max-content; min-width: 100%; min-height: 320px; }
+.contract-preview .docx-wrapper { width: max-content !important; padding: 0 !important; background: transparent !important; }
+.contract-preview .docx { margin: 0 auto 16px !important; box-shadow: 0 3px 14px rgba(35, 45, 38, .12); }
+.contract-preview .docx p { position: relative; }
+.document-label { display: flex; align-items: center; color: #829087; font-size: 11px; font-weight: 500; }
+.document-icon { display: inline-grid; place-items: center; margin-right: 9px; width: 28px; height: 28px; border-radius: 9px; background: #eaf0e8; color: #52715a; font-size: 13px; }
+.label-divider { padding: 0 9px; color: #c4cdc3; }
+.contract-card h2 { margin: 20px 0 0; color: #2c3b33; font-size: 22px; line-height: 1.5; letter-spacing: .015em; }
+.recipient { margin: 10px 0 0; color: #68766d; font-size: 13px; }
+.data-block { margin-top: 23px; padding-top: 18px; border-top: 1px solid #edf0eb; }
+.data-block h3, .old-account h3 { margin: 0 0 10px; color: #52705a; font-size: 12px; font-weight: 700; }
+.info-row { display: grid; grid-template-columns: 142px minmax(0, 1fr); gap: 12px; padding: 6px 0; color: #929c94; font-size: 12px; line-height: 1.6; }
+.info-row strong { text-align: right; color: #4b5950; font-size: 12px; font-weight: 500; overflow-wrap: anywhere; }
+.mono { font-family: "DM Sans", Consolas, monospace; letter-spacing: .02em; }
+.old-account { margin-top: 17px; padding: 15px 17px; border: 1px solid #edf0eb; border-radius: 12px; background: #f7f8f5; color: #707d73; font-size: 11px; line-height: 1.7; }
+.old-account h3 { margin-bottom: 5px; }
+.old-account p { margin: 2px 0; }
+.terms { margin-top: 16px; color: #68756d; font-size: 11px; line-height: 1.9; }
+.terms p { margin: 7px 0 0; }
+.terms .attestation-close { margin-top: 13px; color: #46574b; font-weight: 600; }
+.date-row { display: flex; justify-content: space-between; margin-top: 19px; padding-top: 15px; border-top: 1px solid #edf0eb; color: #8a958d; font-size: 11px; }
+.date-row strong { color: #59665d; font-weight: 500; }
+.contract-signatures { display: grid; gap: 8px; margin-top: 17px; padding-top: 14px; border-top: 1px solid #edf0eb; color: #59665d; font-size: 10px; line-height: 1.7; }
+.contract-signature { display: grid; gap: 3px; }
+.contract-signature strong { color: #46554b; font-weight: 600; }
+.contract-signature > span { color: #7d8980; }
+.contract-date { display: block; margin: -7px 0 4px; text-align: right; color: #88938a; }
+.signature-line-area { color: #7d8980; }
+.signature-placement-area { position: relative; height: 82px; overflow: hidden; margin-top: 2px; }
+.signature-underscore { color: #b8c1b8; letter-spacing: .06em; }
+.signature-stamp { position: absolute; z-index: 5; width: 18%; min-width: 60px; max-width: 90px; height: 36px; object-fit: contain; object-position: left center; cursor: grab; user-select: none; touch-action: none; }
+.signature-stamp:active { cursor: grabbing; }
+.contract-signature-done { border-left: 2px solid #91a892; padding-left: 9px; }
+.signing-card { padding: 26px 27px 23px; }
+.sign-card-heading, .signature-heading { display: flex; justify-content: space-between; align-items: end; gap: 10px; }
+.sign-card-heading h2 { margin: 5px 0 0; color: #2e4036; font-size: 17px; }
+.signing-hint, .signature-caption { color: #98a299; font-size: 10px; }
+.party-options { display: grid; gap: 9px; margin-top: 16px; }
+.party-option { display: flex; align-items: center; gap: 12px; width: 100%; padding: 13px 14px; text-align: left; border: 1px solid #e6ebe4; border-radius: 12px; background: #fff; color: inherit; cursor: pointer; transition: .18s ease; }
+.party-option:hover { border-color: #afc1ae; }
+.party-selected { border-color: #8ca58d; background: #f5f8f3; box-shadow: inset 0 0 0 1px rgba(105, 138, 110, .07); }
+.radio { display: grid; place-items: center; flex: 0 0 20px; width: 20px; height: 20px; border: 1.5px solid #ccd5cb; border-radius: 50%; color: #fff; font-size: 11px; }
+.party-selected .radio { border-color: #52765c; background: #52765c; }
+.party-copy { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.party-role { color: #89958c; font-size: 10px; }
+.party-copy strong { color: #3a4b40; font-size: 12px; font-weight: 600; }
+.signature-heading { margin-top: 24px; align-items: end; }
+.signature-heading h3 { margin: 5px 0 0; color: #415148; font-size: 12px; font-weight: 600; }
+.signature-paper { position: relative; height: 225px; margin-top: 12px; overflow: hidden; border: 1px solid #e2e8e0; border-radius: 13px; background: linear-gradient(135deg, #fff, #fdfefc); transition: border-color .2s; }
+.signature-paper.has-ink { border-color: #c3d2c2; }
+.signature-paper canvas { position: absolute; inset: 0; z-index: 2; width: 100%; height: 100%; touch-action: none; cursor: crosshair; }
+.placeholder { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 9px; pointer-events: none; }
+.placeholder span { color: #c0c9c0; font-family: "Noto Sans SC", serif; font-size: 21px; letter-spacing: .12em; }
+.placeholder small { color: #d0d7cf; font-size: 10px; letter-spacing: .06em; }
+.corner { position: absolute; z-index: 3; width: 14px; height: 14px; border-color: #dce4da; border-style: solid; pointer-events: none; }
+.corner-tl { top: 15px; left: 15px; border-width: 1px 0 0 1px; border-radius: 4px 0 0; }
+.corner-tr { top: 15px; right: 15px; border-width: 1px 1px 0 0; border-radius: 0 4px 0 0; }
+.corner-bl { bottom: 15px; left: 15px; border-width: 0 0 1px 1px; border-radius: 0 0 0 4px; }
+.corner-br { bottom: 15px; right: 15px; border-width: 0 1px 1px 0; border-radius: 0 0 4px; }
+.privacy-note { display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 11px; color: #929e94; font-size: 10px; }
+.tip-dot { width: 6px; height: 6px; border-radius: 50%; background: #9db29b; }
+.status-message { margin: 11px 0 0; padding: 9px 11px; border-radius: 8px; background: #eef4ec; color: #52705a; font-size: 11px; line-height: 1.5; }
+.actions { display: flex; gap: 10px; margin-top: 17px; }
+.button { height: 44px; padding: 0 14px; border: 0; border-radius: 10px; font-size: 12px; font-weight: 600; white-space: nowrap; cursor: pointer; transition: .18s ease; }
+.button:disabled { opacity: .42; cursor: not-allowed; box-shadow: none; }
+.button-quiet { flex: 0 0 112px; background: #edf0eb; color: #526158; }
+.button-quiet:not(:disabled):hover { background: #e2e9e1; }
+.button-primary { flex: 1; background: #365b47; color: #fff; box-shadow: 0 7px 16px rgba(52, 89, 67, .16); }
+.button-primary:not(:disabled):hover { background: #2d4f3c; transform: translateY(-1px); }
+.button-primary span { margin-left: 7px; font-size: 15px; font-weight: 400; }
+.button-download { width: 100%; margin-top: 10px; border: 1px solid #d9e2d8; background: #eff4ed; color: #3e5c46; }
+.button-download:not(:disabled):hover { background: #e6efe3; }
+.button-download:disabled { opacity: .45; cursor: not-allowed; }
+.button-download span { margin-left: 7px; font-size: 15px; font-weight: 400; }
+.signature-vault { margin-top: 20px; padding: 15px 15px 7px; border: 1px solid #e6ebe4; border-radius: 12px; background: #f8faf7; }
+.vault-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 11px; }
+.vault-heading h3 { margin: 4px 0 0; color: #35483b; font-size: 14px; }
+.vault-count { color: #718177; font-size: 10px; white-space: nowrap; }
+.vault-list { display: grid; }
+.vault-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 66px; padding: 10px 0; border-top: 1px solid #e9eee7; }
+.vault-party { display: flex; align-items: center; gap: 9px; min-width: 0; }
+.vault-status { display: grid; place-items: center; flex: 0 0 20px; width: 20px; height: 20px; border: 1px solid #d8dfd6; border-radius: 50%; color: #a6b0a6; font-size: 14px; }
+.vault-status-done { border-color: #a8bda7; background: #eaf1e8; color: #52765c; font-size: 11px; }
+.vault-copy { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.vault-copy strong { overflow: hidden; color: #48574c; font-size: 10px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.vault-copy > span { color: #98a398; font-size: 9px; }
+.vault-signature { display: block; flex: 0 0 110px; width: 110px; height: 42px; object-fit: contain; border: 1px solid #e9eee7; border-radius: 7px; background: #fff; }
+.vault-empty { flex: 0 0 auto; color: #b1bab1; font-size: 9px; }
+.vault-history-heading { display: flex; justify-content: space-between; align-items: center; padding: 12px 0 8px; border-top: 1px solid #e9eee7; color: #637268; font-size: 10px; }
+.vault-history-heading > span { color: #98a398; font-size: 9px; }
+.vault-history-list { display: grid; gap: 7px; max-height: 270px; overflow-y: auto; padding-bottom: 8px; }
+.vault-history-item { display: grid; grid-template-columns: minmax(0, 1fr) 86px auto auto; align-items: center; gap: 8px; padding: 8px; border: 1px solid #e9eee7; border-radius: 8px; background: #fff; }
+.vault-history-info { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.vault-history-info strong { overflow: hidden; color: #536157; font-size: 9px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.vault-history-info time { color: #a0aaa1; font-size: 8px; white-space: nowrap; }
+.vault-history-item .vault-signature { flex-basis: 86px; width: 86px; height: 36px; }
+.vault-delete { padding: 5px 7px; border: 0; border-radius: 6px; background: #f6eeee; color: #986e6a; font: inherit; font-size: 9px; cursor: pointer; }
+.vault-delete:hover { background: #f0e2e0; }
+.vault-reuse { padding: 5px 7px; border: 0; border-radius: 6px; background: #edf3eb; color: #56735c; font: inherit; font-size: 9px; cursor: pointer; }
+.vault-reuse:hover { background: #e2ecdf; }
+.vault-history-empty { margin: 0 0 8px; padding: 12px 8px; border: 1px dashed #dfe6dc; border-radius: 8px; color: #a0aaa1; text-align: center; font-size: 9px; }
+.footer-note { margin: 12px 0 0; text-align: center; color: #a2aba3; font-size: 9px; }
+.page-footer { display: flex; justify-content: space-between; padding-top: 18px; color: #a0aaa1; font-size: 10px; }
+
+@media (max-width: 900px) and (min-width: 641px) {
+  .app-shell { padding: 20px; }
+  .workspace { grid-template-columns: minmax(0, .95fr) minmax(310px, 1.05fr); gap: 16px; }
+  .contract-card, .signing-card { padding: 20px 16px; }
+  .info-row { grid-template-columns: 94px minmax(0, 1fr); gap: 7px; font-size: 10px; }
+  .info-row strong { font-size: 10px; }
+  .contract-card h2 { font-size: 18px; }
+  .terms { font-size: 10px; }
+  .old-account { padding: 12px; }
+}
+@media (max-width: 640px) {
+  .app-shell { padding: 16px 12px 20px; }
+  .topbar { gap: 11px; padding-bottom: 16px; }
+  .brand-mark { flex: 0 0 38px; width: 38px; height: 38px; }
+  .heading h1 { font-size: 18px; }
+  .workspace { min-width: 0; grid-template-columns: minmax(0, 1fr); gap: 12px; width: 100%; margin: 0 auto; padding-top: 14px; }
+  .contract-card { padding: 17px 14px 14px; border-radius: 14px; }
+  .signing-card { padding: 20px 16px; border-radius: 14px; }
+  .contract-preview-scroll { max-height: 54vh; padding: 8px; margin-top: 12px; }
+  .contract-preview .docx { margin: 0 0 12px !important; }
+  .signature-paper { height: 190px; }
+  .actions { gap: 8px; }
+  .button { min-height: 46px; height: auto; padding: 10px 11px; white-space: normal; line-height: 1.4; }
+  .button-quiet { flex-basis: 96px; }
+  .signature-vault { margin-top: 16px; padding: 13px 12px 6px; }
+  .vault-signature { flex-basis: 86px; width: 86px; height: 38px; }
+  .vault-history-item { grid-template-columns: minmax(0, 1fr) 64px auto auto; gap: 5px; padding: 7px 6px; }
+  .vault-history-item .vault-signature { flex-basis: 64px; width: 64px; }
+  .page-footer { max-width: 620px; width: 100%; margin: 0 auto; gap: 12px; }
+}
+@media (max-width: 480px) {
+  .app-shell { padding: 15px 13px; }
+  .topbar { padding-bottom: 17px; }
+  .heading h1 { font-size: 17px; }
+  .secure-label { font-size: 10px; }
+  .workspace { padding-top: 15px; }
+  .contract-card, .signing-card { padding: 20px 17px; }
+  .contract-card h2 { font-size: 18px; }
+  .info-row { grid-template-columns: 112px minmax(0, 1fr); font-size: 10px; }
+  .info-row strong { font-size: 10px; }
+  .page-footer { gap: 10px; font-size: 9px; }
+}

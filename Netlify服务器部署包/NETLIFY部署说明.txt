@@ -1,0 +1,12 @@
+Netlify 部署说明
+
+本项目包含 Netlify Functions + Netlify Blobs 服务端存储。线上签名会保存到 Netlify，刷新或关闭浏览器后仍可读取。
+
+部署方式：
+1. 将此源码包解压并放入 Git 仓库。
+2. 在 Netlify 导入该 Git 仓库，Build command 使用 npm run build，Publish directory 使用 dist。
+3. 部署完成后，访问 /api/signing 检查接口是否正常；Netlify Functions 会自动识别 netlify/functions/signing.ts。
+
+本地开发使用 npm install 后运行 npm run dev，签名数据写入 .local-data/signing.json。
+
+注意：当前项目面向同一份合同，签名数据共用同一条记录。公开站点的访问者均可读写该记录；如果需要限制签署人，应在公开部署前增加身份验证。
