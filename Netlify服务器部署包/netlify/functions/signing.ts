@@ -33,7 +33,7 @@ export default async function signing(request: Request) {
           !input.history.every((item) => item && typeof item.id === "string" && Number.isInteger(item.signerIndex) &&
             item.signerIndex >= 0 && item.signerIndex < 2 && typeof item.signature === "string" &&
             item.signature.startsWith("data:image/png;base64,") && item.signature.length < 700_000 &&
-            typeof item.createdAt === "string"))) {
+            typeof item.createdAt === "string")))) {
       return json({ error: "Invalid signing data" }, 400);
     }
 
